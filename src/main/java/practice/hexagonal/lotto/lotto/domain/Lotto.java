@@ -1,7 +1,10 @@
 package practice.hexagonal.lotto.lotto.domain;
 
+import lombok.RequiredArgsConstructor;
+
 import java.util.List;
 
+@RequiredArgsConstructor
 public class Lotto {
 
     // 예제이므로 당첨 번호 고정, 범위는 46~90
@@ -9,10 +12,6 @@ public class Lotto {
             new LottoNumber(60), new LottoNumber(66), new LottoNumber(78), new LottoNumber(86)));
 
     private final LottoNumbers selectedLottoNumbers;
-
-    public Lotto(LottoNumbers selectedLottoNumbers) {
-        this.selectedLottoNumbers = selectedLottoNumbers;
-    }
 
     public Integer winningCount() {
         List<LottoNumber> winningNumbers = winningLottoNumbers.getLottoNumbers();
